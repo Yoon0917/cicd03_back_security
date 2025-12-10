@@ -75,6 +75,18 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_USERNAME: GitHub Actions
           SLACK_ICON_EMOJI: ':rocket:'
-          SLACK_TITLE: '✅ EC2 배포 완료'
+          SLACK_TITLE: '✅ EC2 배포 완료 To Sung'
+          SLACK_MESSAGE: 'Main 브랜치에 push됨 → EC2에 배포가 성공적으로 완료되었습니다! 🎉'
+          SLACK_COLOR: good
+
+
+          # 8. Slack 알림 전송
+      - name: Notify to Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL2 }}
+          SLACK_USERNAME: GitHub Actions
+          SLACK_ICON_EMOJI: ':rocket:'
+          SLACK_TITLE: '✅ EC2 배포 완료 To Me'
           SLACK_MESSAGE: 'Main 브랜치에 push됨 → EC2에 배포가 성공적으로 완료되었습니다! 🎉'
           SLACK_COLOR: good
